@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Arena</title>
+
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <h1>SPACE ARENA</h1>
+      </header>
+
+      <canvas
+        id="gameCanvas"
+        width="960"
+        height="540"
+      ></canvas>
+
+      <!--
+        Залишаємо елементи для сумісності з main.js.
+        Технічна статистика прихована через CSS.
+      -->
+      <div id="hud" hidden>
+        <span>
+          FPS: <strong id="fps">0</strong>
+        </span>
+
+        <span>
+          Steps/s: <strong id="sps">0</strong>
+        </span>
+
+        <span>
+          Frame: <strong id="frameTime">0</strong> ms
+        </span>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

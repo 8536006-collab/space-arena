@@ -1,0 +1,33 @@
+{
+  "name": "space-arena",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "npm run build:shared && npm run dev --workspace=client",
+    "dev:server": "npm run build:shared && npm run dev --workspace=server",
+    "build": "npm run build:shared && npm run build --workspace=client",
+    "preview": "npm run preview --workspace=client",
+    "lint": "eslint client/src",
+    "build:shared": "npm run build --workspace=shared",
+    "typecheck": "npm run typecheck --workspace=shared && npm run typecheck --workspace=server && npm run typecheck --workspace=client",
+    "test:determinism": "npm run test --workspace=shared"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.6",
+    "@types/ws": "^8.18.2",
+    "@vitest/coverage-v8": "^5.1.0",
+    "eslint": "^9.39.5",
+    "fast-check": "^4.10.2",
+    "prettier": "^3.9.10",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}
